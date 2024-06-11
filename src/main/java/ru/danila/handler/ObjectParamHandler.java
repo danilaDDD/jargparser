@@ -1,4 +1,4 @@
-package ru.danila.argparser.param;
+package ru.danila.handler;
 
 public interface ObjectParamHandler extends ParamHandler<Object>{
 }
