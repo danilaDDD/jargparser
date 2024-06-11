@@ -1,8 +1,6 @@
 package ru.danila.argparser;
 
 import ru.danila.argparser.param.Param;
-import ru.danila.argparser.param.ParamHandler;
-import ru.danila.argparser.param.ParamType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,10 +12,7 @@ public class ArgParser {
 
 
     public void printInfo(){
-        for(var entry: paramDTOMap.entrySet())
-            System.out.println(entry.getValue());
-
-        commandArgParser = new CommandArgParser(paramDTOMap);
+        System.out.println(this);
     }
 
     public void parse(String commandArg){
@@ -33,6 +28,15 @@ public class ArgParser {
             paramDTOMap.put(param.getShortName(), param);
     }
 
+    @Override
+    public String toString() {
+        StringBuilder stringBuffer = new StringBuilder();
+        for(var entry: paramDTOMap.entrySet())
+            stringBuffer.append(entry.getValue()).append("\n");
+
+        return stringBuffer.toString();
+    }
+
     public static Builder builder(){
         return new Builder();
     }
@@ -40,7 +44,7 @@ public class ArgParser {
     public static class Builder{
         List<Param> params = new ArrayList<>();
 
-        public Builder addHandler(Param param){
+        public Builder addParam(Param param){
             params.add(param);
             return this;
         }
