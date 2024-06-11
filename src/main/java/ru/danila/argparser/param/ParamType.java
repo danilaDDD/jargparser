@@ -1,4 +1,4 @@
-package ru.danila.argparser;
+package ru.danila.argparser.param;
 
 public enum ParamType {
     STRING,

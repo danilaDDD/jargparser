@@ -1,11 +1,15 @@
 package ru.danila.argparser;
 
+import ru.danila.argparser.param.Param;
+import ru.danila.argparser.param.ParamHandler;
+import ru.danila.argparser.param.ParamType;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 public class ArgParser {
-    private Map<String, ParamDTO> paramDTOMap;
+    private Map<String, Param> paramDTOMap;
     private CommandArgParser commandArgParser;
 
 
@@ -24,9 +28,9 @@ public class ArgParser {
         handleParams(builder.params);
     }
 
-    private void handleParams(List<ParamDTO> params) {
-        for(ParamDTO paramDTO: params)
-            paramDTOMap.put(paramDTO.shortName, paramDTO);
+    private void handleParams(List<Param> params) {
+        for(Param param: params)
+            paramDTOMap.put(param.getShortName(), param);
     }
 
     public static Builder builder(){
@@ -34,44 +38,15 @@ public class ArgParser {
     }
 
     public static class Builder{
-        List<ParamDTO> params = new ArrayList<>();
+        List<Param> params = new ArrayList<>();
 
-        public Builder addHandler(String shortName, String fullName, String description, boolean required, ParamType paramType, boolean repeated, ParamHandler handler){
-            params.add(new ParamDTO(shortName, fullName, description, required, paramType, repeated, handler));
+        public Builder addHandler(Param param){
+            params.add(param);
             return this;
-        }
-        
-        public Builder addHandler(String shortName, String fullName, String description, ParamType paramType, ParamHandler handler){
-            return addHandler(shortName, fullName, description, true, paramType, false, handler);
         }
 
         public ArgParser build(){
             return new ArgParser(this);
-        }
-    }
-
-    public static class ParamDTO<T>{
-        private final String shortName;
-        private final String fullName;
-        private final boolean required;
-        private final ParamType paramType;
-        private final boolean repeated;
-        private final ParamHandler<T> handler;
-        private final String description;
-
-        public ParamDTO(String shortName, String fullName, String description, boolean required, ParamType paramType, boolean repeated, ParamHandler<T> handler) {
-            this.fullName = fullName;
-            this.shortName = shortName;
-            this.required = required;
-            this.paramType = paramType;
-            this.repeated = repeated;
-            this.handler = handler;
-            this.description = description;
-        }
-
-        @Override
-        public String toString() {
-            return String.format("-%s --%s %s", shortName, fullName, description);
         }
     }
 }

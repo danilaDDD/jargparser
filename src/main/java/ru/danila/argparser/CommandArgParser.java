@@ -1,11 +1,13 @@
 package ru.danila.argparser;
 
+import ru.danila.argparser.param.Param;
+
 import java.util.Map;
 
 public class CommandArgParser {
-    Map<String, ArgParser.ParamDTO> paramDTOMap;
+    Map<String, Param> paramDTOMap;
 
-    public CommandArgParser(Map<String, ArgParser.ParamDTO> paramDTOMap) {
+    public CommandArgParser(Map<String, Param> paramDTOMap) {
         this.paramDTOMap = paramDTOMap;
     }
 
