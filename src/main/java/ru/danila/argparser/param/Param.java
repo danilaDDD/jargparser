@@ -1,7 +1,6 @@
 package ru.danila.argparser.param;
 
 import ru.danila.exceptions.RequiredParamFieldNotSetException;
-import ru.danila.handler.ObjectParamHandler;
 import ru.danila.handler.ParamHandler;
 
 public class Param{
