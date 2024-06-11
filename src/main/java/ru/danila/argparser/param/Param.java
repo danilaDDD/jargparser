@@ -1,6 +1,8 @@
 package ru.danila.argparser.param;
 
 import ru.danila.exceptions.RequiredParamFieldNotSetException;
+import ru.danila.handler.ObjectParamHandler;
+import ru.danila.handler.ParamHandler;
 
 public class Param{
     private final String shortName;
@@ -8,7 +10,7 @@ public class Param{
     private final boolean required;
     private final ParamType paramType;
     private final boolean repeated;
-    private final ObjectParamHandler handler;
+    private final ParamHandler handler;
     private final String description;
 
     public static class Builder{
@@ -17,7 +19,7 @@ public class Param{
         private boolean required = true;
         private ParamType paramType = ParamType.STRING;
         private boolean repeated = false;
-        private ObjectParamHandler handler = null;
+        private ParamHandler handler = null;
         private String description = "";
 
         public Builder setShortName(String shortName){
@@ -30,7 +32,7 @@ public class Param{
             return this;
         }
 
-        public Builder setParamHandler(ObjectParamHandler paramHandler){
+        public Builder setParamHandler(ParamHandler paramHandler){
             this.handler = paramHandler;
             return this;
         }
@@ -89,7 +91,7 @@ public class Param{
         return fullName;
     }
 
-    public ParamHandler<Object> getHandler() {
+    public ParamHandler getHandler() {
         return handler;
     }
 
