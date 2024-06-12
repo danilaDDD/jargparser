@@ -3,9 +3,11 @@ package ru.danila.tests;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.opentest4j.AssertionFailedError;
 import ru.danila.argparser.ArgParser;
-import ru.danila.argparser.param.Param;
+import ru.danila.argparser.param.CommandParam;
 import ru.danila.argparser.param.ParamType;
+import ru.danila.exceptions.ParseCommandLineException;
 import ru.danila.handler.IntegerParamHandler;
 import ru.danila.handler.StringParamHandler;
 
@@ -19,7 +21,11 @@ public class SuccessParseByArgParserTests {
     @ParameterizedTest
     @MethodSource(value = "getArgs")
     public void testCommandHandle(ArgParser argParser, String commandArg){
-        argParser.parse(commandArg);
+        try {
+            argParser.parse(commandArg);
+        } catch (ParseCommandLineException e) {
+            throw new AssertionError(e.getMessage(), e);
+        }
     }
 
     private static Stream<Arguments> getArgs(){
@@ -32,7 +38,7 @@ public class SuccessParseByArgParserTests {
     private static Arguments getRepeatedStringTestArguments(){
         List<String> expectedArgValues = List.of("key1=value1", "key2=value2", "key3=value3");
 
-        Param param = Param.builder()
+        CommandParam param = CommandParam.builder()
                 .setShortName("e")
                 .setFullName("env")
                 .setRepeated(true)
@@ -53,7 +59,7 @@ public class SuccessParseByArgParserTests {
     private static Arguments getIntegerRepeatTestArguments(){
         List<Integer> expectedArg = List.of(1, 2, 3);
 
-        Param param = Param.builder()
+        CommandParam param = CommandParam.builder()
                 .setRepeated(true)
                 .setParamType(ParamType.INTEGER)
                 .setShortName("i")

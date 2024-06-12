@@ -3,7 +3,9 @@ package ru.danila.argparser.param;
 import ru.danila.exceptions.RequiredParamFieldNotSetException;
 import ru.danila.handler.ParamHandler;
 
-public class Param{
+import java.util.Objects;
+
+public class CommandParam {
     private final String shortName;
     private final String fullName;
     private final boolean required;
@@ -56,7 +58,7 @@ public class Param{
             return this;
         }
 
-        public Param build(){
+        public CommandParam build(){
             if(this.shortName == null)
                 throw new RequiredParamFieldNotSetException("short name");
             if(this.fullName == null)
@@ -64,7 +66,7 @@ public class Param{
             if(this.handler == null)
                 throw new RequiredParamFieldNotSetException("handler");
 
-            return new Param(this);
+            return new CommandParam(this);
         }
     }
 
@@ -72,7 +74,7 @@ public class Param{
         return new Builder();
     }
 
-    private Param(Builder builder) {
+    private CommandParam(Builder builder) {
         this.fullName = builder.fullName;
         this.shortName = builder.shortName;
         this.required = builder.required;
@@ -113,5 +115,18 @@ public class Param{
     @Override
     public String toString() {
         return String.format("-%s --%s %s", shortName, fullName, description);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CommandParam that = (CommandParam) o;
+        return Objects.equals(shortName, that.shortName) && Objects.equals(fullName, that.fullName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(shortName, fullName);
     }
 }

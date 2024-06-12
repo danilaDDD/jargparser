@@ -1,38 +1,34 @@
 package ru.danila.argparser;
 
-import ru.danila.argparser.param.Param;
+import ru.danila.argparser.param.CommandParam;
+import ru.danila.exceptions.ParseCommandLineException;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ArgParser {
-    private Map<String, Param> paramDTOMap;
-    private CommandArgParser commandArgParser;
+    private Set<CommandParam> paramSet;
+    private CommandArgumentCollector collector;
 
 
     public void printInfo(){
         System.out.println(this);
     }
 
-    public void parse(String commandArg){
-        commandArgParser.parse(commandArg);
+    public void parse(String commandArg) throws ParseCommandLineException {
+        Map<CommandParam, List<String>> collectedParams = collector.collect(commandArg);
+
     }
 
     private ArgParser(Builder builder){
-        handleParams(builder.params);
-    }
-
-    private void handleParams(List<Param> params) {
-        for(Param param: params)
-            paramDTOMap.put(param.getShortName(), param);
+        paramSet = builder.paramSet;
+        collector = new CommandArgumentCollector(paramSet);
     }
 
     @Override
     public String toString() {
         StringBuilder stringBuffer = new StringBuilder();
-        for(var entry: paramDTOMap.entrySet())
-            stringBuffer.append(entry.getValue()).append("\n");
+        for(var param: paramSet)
+            stringBuffer.append(param.toString()).append("\n");
 
         return stringBuffer.toString();
     }
@@ -42,10 +38,10 @@ public class ArgParser {
     }
 
     public static class Builder{
-        List<Param> params = new ArrayList<>();
+        Set<CommandParam> paramSet = new HashSet<>();
 
-        public Builder addParam(Param param){
-            params.add(param);
+        public Builder addParam(CommandParam param){
+            paramSet.add(param);
             return this;
         }
 
