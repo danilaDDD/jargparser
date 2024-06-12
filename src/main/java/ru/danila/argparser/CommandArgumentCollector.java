@@ -66,7 +66,6 @@ class CommandArgumentCollector {
     private void appendValueIfExist(CommandParam commandParam, Deque<String> splitCommandLineDeque,
                                     Map<CommandParam, List<String>> result) throws ParseCommandLineException {
         if(commandParam.getParamType() != ParamType.NON_ARGUMENT){
-            // or throw NoSuchElementException while handed above
             String value = splitCommandLineDeque.pollFirst();
             if(value == null)
                 throw new ParseCommandLineException(String.format("command line finish without value for param \"%s\"", commandParam));
