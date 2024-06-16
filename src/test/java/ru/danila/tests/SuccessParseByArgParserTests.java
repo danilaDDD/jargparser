@@ -4,7 +4,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import ru.danila.argparser.ArgParser;
-import ru.danila.argparser.SimpleArgParser;
 import ru.danila.argparser.argparserargs.ParserArgs;
 import ru.danila.argparser.commandsrunner.CommandsRunner;
 import ru.danila.argparser.handler.CommandHandler;
@@ -21,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class SuccessParseByArgParserTests {
-    private final ArgParser argParser = new SimpleArgParser();
+    private final ArgParser argParser = ArgParser.of();
 
     @ParameterizedTest
     @MethodSource(value = "getArgs")

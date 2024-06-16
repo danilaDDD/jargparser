@@ -6,7 +6,7 @@ import ru.danila.argparser.exceptions.ArgParserRequiredParamException;
 
 import java.util.*;
 
-public class SimpleParserArgs implements ParserArgs{
+class SimpleParserArgs implements ParserArgs{
     private final Set<KeyCommandParam> keyCommandParamSet;
     private List<PositionCommandParam> positionCommandParamList;
     private String commandArgs;
