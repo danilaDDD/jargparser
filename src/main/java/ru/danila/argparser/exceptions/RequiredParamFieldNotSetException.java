@@ -1,4 +1,4 @@
-package ru.danila.exceptions;
+package ru.danila.argparser.exceptions;
 
 public class RequiredParamFieldNotSetException extends RuntimeException{
     public RequiredParamFieldNotSetException(String fieldName) {

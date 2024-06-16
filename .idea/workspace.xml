@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9b82c7c2-d199-419f-8135-e5ae5d2cd822" name="Changes" comment="remove comment">
+      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/danila/argparser/SimpleArgParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/danila/argparser/argparserargs/ParserArgs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/danila/argparser/argparserargs/SimpleParserArgs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/danila/argparser/commandsrunner/CommandsRunner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/danila/argparser/exceptions/ArgParserIOException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/danila/argparser/exceptions/ArgParserRequiredParamException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/danila/argparser/exceptions/RunCommandsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/danila/argparser/handler/CommandHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/danila/argparser/handler/HandleArgs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/danila/argparser/param/KeyCommandParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/danila/argparser/param/PositionCommandParam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danila/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danila/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danila/argparser/ArgParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danila/argparser/ArgParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danila/argparser/CommandArgumentCollector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danila/argparser/CommandArgumentCollector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danila/argparser/param/CommandParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danila/argparser/param/CommandParam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danila/exceptions/ParseCommandLineException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danila/argparser/exceptions/ParseCommandLineException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danila/exceptions/RequiredParamFieldNotSetException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danila/argparser/exceptions/RequiredParamFieldNotSetException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danila/handler/DoubleParamHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danila/handler/IntegerParamHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danila/handler/ObjectParamHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danila/handler/ParamHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danila/handler/StringParamHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danila/parser/ParamParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danila/argparser/parser/ParamParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/danila/tests/SuccessParseByArgParserTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/danila/tests/SuccessParseByArgParserTests.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="argparser" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2hdjUBCpyaswsxw9Y1YHtBlbECj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.ArgParserTests.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ArgParserTests.testCommandHandle.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.IfSuccessArgParserTests.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.SuccessParseByArgParserTests.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.argparser [:Main.main()].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;app.teamhub.trackedBranches&quot;: &quot;&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/danila/self2/argparser&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Gradle.SuccessParseByArgParserTests">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.danila.Main" />
+      <module name="argparser.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.danila.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ArgParserTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ru.danila.tests.ArgParserTests&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ArgParserTests.testCommandHandle" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ru.danila.tests.ArgParserTests.testCommandHandle&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="IfSuccessArgParserTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ru.danila.tests.IfSuccessArgParserTests&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="SuccessParseByArgParserTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ru.danila.tests.SuccessParseByArgParserTests&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.SuccessParseByArgParserTests" />
+        <item itemvalue="Gradle.IfSuccessArgParserTests" />
+        <item itemvalue="Gradle.ArgParserTests" />
+        <item itemvalue="Gradle.ArgParserTests.testCommandHandle" />
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9b82c7c2-d199-419f-8135-e5ae5d2cd822" name="Changes" comment="" />
+      <created>1717930865576</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1717930865576</updated>
+      <workItem from="1717930867192" duration="8659000" />
+      <workItem from="1718097392906" duration="13436000" />
+      <workItem from="1718116927255" duration="1571000" />
+      <workItem from="1718188011086" duration="17993000" />
+      <workItem from="1718282192499" duration="1632000" />
+      <workItem from="1718356185638" duration="14394000" />
+      <workItem from="1718437827032" duration="8401000" />
+      <workItem from="1718529047601" duration="8441000" />
+    </task>
+    <task id="LOCAL-00001" summary="base architect">
+      <option name="closed" value="true" />
+      <created>1717936888235</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1717936888238</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add testImplements asspectj &#10;add Param builder and add ObjectParamHandler as Param.handler">
+      <option name="closed" value="true" />
+      <created>1718106008334</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1718106008335</updated>
+    </task>
+    <task id="LOCAL-00003" summary="added interfaces DoubleParamHandler, IntegerParamHandler and StringParamHandler">
+      <option name="closed" value="true" />
+      <created>1718117329588</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1718117329588</updated>
+    </task>
+    <task id="LOCAL-00004" summary="rename method ArgParser::addHandler to addParam. add ArgParser toString">
+      <option name="closed" value="true" />
+      <created>1718117520021</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1718117520021</updated>
+    </task>
+    <task id="LOCAL-00005" summary="move ObjectParamHandler and ParamHandler from param to handler package">
+      <option name="closed" value="true" />
+      <created>1718117633822</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1718117633822</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add tests SuccessParserByParserTests">
+      <option name="closed" value="true" />
+      <created>1718117679732</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1718117679732</updated>
+    </task>
+    <task id="LOCAL-00007" summary="remove unused imports">
+      <option name="closed" value="true" />
+      <created>1718117795852</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1718117795852</updated>
+    </task>
+    <task id="LOCAL-00008" summary="rename Param to CommandParam">
+      <option name="closed" value="true" />
+      <created>1718206519474</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1718206519474</updated>
+    </task>
+    <task id="LOCAL-00009" summary="remove CommandArgParser">
+      <option name="closed" value="true" />
+      <created>1718206555978</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1718206555978</updated>
+    </task>
+    <task id="LOCAL-00010" summary="add CommandArgumentCollector">
+      <option name="closed" value="true" />
+      <created>1718206592325</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1718206592325</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add ParamType.NON_ARGUMENT and ParseCommandLineException">
+      <option name="closed" value="true" />
+      <created>1718206635091</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1718206635091</updated>
+    </task>
+    <task id="LOCAL-00012" summary="add ParamType.NON_ARGUMENT and ParseCommandLineException">
+      <option name="closed" value="true" />
+      <created>1718206640203</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1718206640203</updated>
+    </task>
+    <task id="LOCAL-00013" summary="remove comment">
+      <option name="closed" value="true" />
+      <created>1718206674238</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1718206674238</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="base architect" />
+    <MESSAGE value="add testImplements asspectj &#10;add Param builder and add ObjectParamHandler as Param.handler" />
+    <MESSAGE value="added interfaces DoubleParamHandler, IntegerParamHandler and StringParamHandler" />
+    <MESSAGE value="rename method ArgParser::addHandler to addParam. add ArgParser toString" />
+    <MESSAGE value="move ObjectParamHandler and ParamHandler from param to handler package" />
+    <MESSAGE value="add tests SuccessParserByParserTests" />
+    <MESSAGE value="remove unused imports" />
+    <MESSAGE value="rename Param to CommandParam" />
+    <MESSAGE value="remove CommandArgParser" />
+    <MESSAGE value="add CommandArgumentCollector" />
+    <MESSAGE value="add ParamType.NON_ARGUMENT and ParseCommandLineException" />
+    <MESSAGE value="remove comment" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove comment" />
+  </component>
+</project>
