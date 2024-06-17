@@ -19,15 +19,6 @@ class SimpleParserArgs implements ParserArgs{
         handlers = builder.handlers;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder stringBuffer = new StringBuilder();
-        for(var param: keyCommandParamSet)
-            stringBuffer.append(param.toString()).append("\n");
-
-        return stringBuffer.toString();
-    }
-
     public static Builder builder(){
         return new Builder();
     }
@@ -50,6 +41,11 @@ class SimpleParserArgs implements ParserArgs{
     @Override
     public Deque<CommandHandler> getHandlersDeque() {
         return this.handlers;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("ParserArgs{command line: %s , key arguments: %s, position arguments: %s}", commandArgs, keyCommandParamSet, positionCommandParamList);
     }
 
     public static class Builder{
