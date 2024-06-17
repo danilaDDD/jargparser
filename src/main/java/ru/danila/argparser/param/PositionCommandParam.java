@@ -16,4 +16,9 @@ public class PositionCommandParam extends CommandParam{
     public PositionCommandParam() {
         this(ParamType.STRING, true, null);
     }
+
+    @Override
+    public String toString() {
+        return String.format("PositionCommandParam{%s}", getParamType());
+    }
 }

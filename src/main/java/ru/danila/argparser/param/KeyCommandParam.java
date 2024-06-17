@@ -2,6 +2,8 @@ package ru.danila.argparser.param;
 
 import ru.danila.argparser.exceptions.RequiredParamFieldNotSetException;
 
+import java.util.Objects;
+
 public class KeyCommandParam extends CommandParam{
     private String shortName;
     private String fullName;
@@ -24,6 +26,24 @@ public class KeyCommandParam extends CommandParam{
 
     public boolean isRepeated() {
         return isRepeated;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        KeyCommandParam that = (KeyCommandParam) o;
+        return Objects.equals(shortName, that.shortName) && Objects.equals(fullName, that.fullName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(shortName, fullName);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("KeyCommandParam{short name=%s, full name=%s}", shortName, fullName);
     }
 
     public static class Builder{
