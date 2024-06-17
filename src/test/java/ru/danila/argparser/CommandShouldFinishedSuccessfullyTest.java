@@ -1,9 +1,8 @@
-package ru.danila.tests;
+package ru.danila.argparser;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import ru.danila.argparser.ArgParser;
 import ru.danila.argparser.argparserargs.ParserArgs;
 import ru.danila.argparser.commandsrunner.CommandsRunner;
 import ru.danila.argparser.handler.CommandHandler;

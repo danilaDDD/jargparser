@@ -4,6 +4,15 @@ import ru.danila.argparser.exceptions.RequiredParamFieldNotSetException;
 
 import java.util.Objects;
 
+/**
+ * key command param
+ * <p></p>short name String required</p>
+ * <p>full name String required</p>
+ * <p>paramType required with default ParamType. STRING</p>
+ * <p>repeted with default false</p>
+ * <p>required with default true</p>
+ * <p>description must be null</p>
+ */
 public class KeyCommandParam extends CommandParam{
     private String shortName;
     private String fullName;
