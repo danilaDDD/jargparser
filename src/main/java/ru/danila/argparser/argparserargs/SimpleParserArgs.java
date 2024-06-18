@@ -9,13 +9,11 @@ import java.util.*;
 class SimpleParserArgs implements ParserArgs{
     private final Set<KeyCommandParam> keyCommandParamSet;
     private List<PositionCommandParam> positionCommandParamList;
-    private String commandArgs;
     private Deque<CommandHandler> handlers;
 
     private SimpleParserArgs(Builder builder){
         positionCommandParamList = builder.positionCommandParamList;
         keyCommandParamSet = builder.keyCommandParamSet;
-        commandArgs = builder.commandArg;
         handlers = builder.handlers;
     }
 
@@ -34,24 +32,18 @@ class SimpleParserArgs implements ParserArgs{
     }
 
     @Override
-    public String getCommandLine() {
-        return this.commandArgs;
-    }
-
-    @Override
     public Deque<CommandHandler> getHandlersDeque() {
         return this.handlers;
     }
 
     @Override
     public String toString() {
-        return String.format("ParserArgs{command line: %s , key arguments: %s, position arguments: %s}", commandArgs, keyCommandParamSet, positionCommandParamList);
+        return String.format("ParserArgs{key arguments: %s, position arguments: %s}",keyCommandParamSet, positionCommandParamList);
     }
 
     public static class Builder{
         private final Set<KeyCommandParam> keyCommandParamSet = new HashSet<>();
         private List<PositionCommandParam> positionCommandParamList = new LinkedList<>();
-        private String commandArg;
         private Deque<CommandHandler> handlers = new ArrayDeque<>();
 
         public Builder addKeyParam(KeyCommandParam param){
@@ -61,11 +53,6 @@ class SimpleParserArgs implements ParserArgs{
 
         public Builder addPositionParam(PositionCommandParam param){
             this.positionCommandParamList.add(param);
-            return this;
-        }
-
-        public Builder setCommandArg(String commandArg) {
-            this.commandArg = commandArg;
             return this;
         }
 
@@ -82,9 +69,6 @@ class SimpleParserArgs implements ParserArgs{
         private void validateOrThrow(){
             if(keyCommandParamSet.isEmpty())
                 throw new ArgParserRequiredParamException("No command parameters added");
-
-            if(commandArg == null || commandArg.isEmpty())
-                throw new ArgParserRequiredParamException("command line is empty or not given");
 
             if(handlers.isEmpty())
                 throw new ArgParserRequiredParamException("handlers is empty");

@@ -19,14 +19,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class CommandShouldFinishedSuccessfullyTest {
-    private final ArgParser argParser = ArgParser.of();
 
     @ParameterizedTest
     @MethodSource(value = "getArgs")
-    public void testRunSyncCommandHandle(ParserArgs args){
+    public void testRunSyncCommandHandle(ParserArgs args, String commandLine){
         boolean success = false;
         try {
-            CommandsRunner commandsRunner = argParser.parse(args);
+            ArgParser argParser = ArgParser.of(args);
+            CommandsRunner commandsRunner = argParser.parse(commandLine);
             commandsRunner.runAllSync();
         }catch (CommandRunSuccessfullyThrowable e){
             success = true;
@@ -37,10 +37,11 @@ public class CommandShouldFinishedSuccessfullyTest {
 
     @ParameterizedTest
     @MethodSource(value = "getArgs")
-    public void testRunAsyncCommandHandle(ParserArgs args){
+    public void testRunAsyncCommandHandle(ParserArgs args, String commandLine){
         boolean success = false;
         try {
-            CommandsRunner commandsRunner = argParser.parse(args);
+            ArgParser argParser = ArgParser.of(args);
+            CommandsRunner commandsRunner = argParser.parse(commandLine);
             commandsRunner.runAllAsync();
         }catch (CommandRunSuccessfullyThrowable e){
             success = true;
@@ -90,7 +91,6 @@ public class CommandShouldFinishedSuccessfullyTest {
                 .addKeyParam(param)
                 .addPositionParam(new PositionCommandParam(ParamType.INTEGER))
                 .addPositionParam(new PositionCommandParam(ParamType.DOUBLE))
-                .setCommandArg("1 1.2 -e key1=value1 --env key2=value2 -e key3=value3")
 
                 .addHandler(new TestableCommandHandler((handleArgs) -> {
                     assertEquals(1, handleArgs.<Integer>getPositionValue(0));
@@ -99,8 +99,9 @@ public class CommandShouldFinishedSuccessfullyTest {
                 }))
 
                 .build();
+        String command = "1 1.2 -e key1=value1 --env key2=value2 -e key3=value3";
 
-        return Arguments.of(args);
+        return Arguments.of(args, command);
     }
 
     private static Arguments CommandWith1KeyRepeatedAnd2PositionStringArgument(){
@@ -114,15 +115,16 @@ public class CommandShouldFinishedSuccessfullyTest {
         ParserArgs args = ParserArgs.builder()
                 .addPositionParam(new PositionCommandParam())
                 .addKeyParam(param)
-                .setCommandArg("--int 1 -i 2 --int 3 word1 word2")
+
                 .addHandler(new TestableCommandHandler((handleArgs) -> {
                     assertEquals("word1", handleArgs.getPositionValue(0));
                     assertEquals("word2", handleArgs.getPositionValue(1));
                     assertEquals(handleArgs.getKeyValue("i"), List.of(1, 2, 3));
                 }))
                 .build();
+        String command = "--int 1 -i 2 --int 3 word1 word2";
 
-        return Arguments.of(args);
+        return Arguments.of(args, command);
     }
 
     private static Arguments CommandMixedManyDifferentKeyAndDifferentPositionArgument(){
@@ -160,7 +162,6 @@ public class CommandShouldFinishedSuccessfullyTest {
                 .build();
 
         ParserArgs args = ParserArgs.builder()
-                .setCommandArg("-nm 1 --number 2.2 -nm 3 10 -t -p password 2.9 -i 1 --integer 2 three")
                 .addKeyParam(pParam)
                 .addKeyParam(iParam)
                 .addKeyParam(nmParam)
@@ -181,7 +182,7 @@ public class CommandShouldFinishedSuccessfullyTest {
                 }))
 
                 .build();
-
-        return Arguments.of(args);
+        String command = "-nm 1 --number 2.2 -nm 3 10 -t -p password 2.9 -i 1 --integer 2 three";
+        return Arguments.of(args, command);
     }
 }

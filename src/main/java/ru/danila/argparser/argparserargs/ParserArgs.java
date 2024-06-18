@@ -17,7 +17,5 @@ public interface ParserArgs {
 
     List<PositionCommandParam> getPositionParams();
 
-    String getCommandLine();
-
     Deque<CommandHandler> getHandlersDeque();
 }
