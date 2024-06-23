@@ -5,6 +5,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import ru.danila.argparser.argparserargs.ParserArgs;
 import ru.danila.argparser.commandsrunner.CommandsRunner;
+import ru.danila.argparser.exceptions.ParseCommandLineException;
 import ru.danila.argparser.handler.CommandHandler;
 import ru.danila.argparser.handler.HandleArgs;
 import ru.danila.argparser.param.KeyCommandParam;
@@ -30,6 +31,8 @@ public class CommandShouldFinishedSuccessfullyTest {
             commandsRunner.runAllSync();
         }catch (CommandRunSuccessfullyThrowable e){
             success = true;
+        } catch (ParseCommandLineException e) {
+            throw new RuntimeException(e);
         }
 
         assertTrue(success);
@@ -45,6 +48,8 @@ public class CommandShouldFinishedSuccessfullyTest {
             commandsRunner.runAllAsync();
         }catch (CommandRunSuccessfullyThrowable e){
             success = true;
+        } catch (ParseCommandLineException e) {
+            throw new RuntimeException(e);
         }
 
         assertTrue(success);

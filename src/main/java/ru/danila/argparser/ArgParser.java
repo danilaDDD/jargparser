@@ -2,6 +2,7 @@ package ru.danila.argparser;
 
 import ru.danila.argparser.argparserargs.ParserArgs;
 import ru.danila.argparser.commandsrunner.CommandsRunner;
+import ru.danila.argparser.exceptions.ParseCommandLineException;
 
 public interface ArgParser {
     static ArgParser of(ParserArgs args) {
@@ -10,5 +11,5 @@ public interface ArgParser {
 
     void printCommandsInfo();
 
-    CommandsRunner parse(String commandLine);
+    CommandsRunner parse(String commandLine) throws ParseCommandLineException;
 }

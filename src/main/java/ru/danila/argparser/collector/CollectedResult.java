@@ -7,11 +7,19 @@ import java.util.List;
 import java.util.Map;
 
 public class CollectedResult{
-    public Map<KeyCommandParam, List<String>> keyParamToValues;
-    public Map<PositionCommandParam, String> positionParamToValue;
+    Map<KeyCommandParam, List<String>> keyParamToValues;
+    List<String> positionParamValues;
 
-    public CollectedResult(Map<PositionCommandParam, String> positionParamToValue, Map<KeyCommandParam, List<String>> keyParamToValues) {
-        this.positionParamToValue = positionParamToValue;
+    public CollectedResult(List<String> positionParamValues, Map<KeyCommandParam, List<String>> keyParamToValues) {
+        this.positionParamValues = positionParamValues;
         this.keyParamToValues = keyParamToValues;
+    }
+
+    public Map<KeyCommandParam, List<String>> getKeyParamToValues() {
+        return keyParamToValues;
+    }
+
+    public void setPositionParamValues(List<String> positionParamValues) {
+        this.positionParamValues = positionParamValues;
     }
 }
