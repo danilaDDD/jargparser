@@ -19,7 +19,7 @@ public class CollectedResult{
         return keyParamToValues;
     }
 
-    public void setPositionParamValues(List<String> positionParamValues) {
-        this.positionParamValues = positionParamValues;
+    public List<String> getPositionParamValues() {
+        return positionParamValues;
     }
 }

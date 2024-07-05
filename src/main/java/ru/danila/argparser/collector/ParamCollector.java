@@ -1,12 +1,9 @@
 package ru.danila.argparser.collector;
 
-import ru.danila.argparser.argparserargs.ParserArgs;
 import ru.danila.argparser.exceptions.ParseCommandLineException;
 import ru.danila.argparser.param.KeyCommandParam;
 import ru.danila.argparser.param.ParamType;
-import ru.danila.argparser.param.PositionCommandParam;
 
-import java.awt.*;
 import java.util.*;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -14,12 +11,10 @@ import java.util.stream.Collectors;
 public class ParamCollector {
     private final Map<String, KeyCommandParam> shortNameToParam;
     private final Map<String, KeyCommandParam> fullNameToParam;
-    private final List<String> positionParamValues;
 
     public ParamCollector(Set<KeyCommandParam> keyParamSet) {
         shortNameToParam = keyParamSet.stream().collect(Collectors.toMap(KeyCommandParam::getShortName, p -> p));
         fullNameToParam = keyParamSet.stream().collect(Collectors.toMap(KeyCommandParam::getFullName, p -> p));
-        positionParamValues = new ArrayList<>();
     }
 
     public CollectedResult collect(String commandLine) throws ParseCommandLineException {
@@ -54,7 +49,7 @@ public class ParamCollector {
                     keyParamToValues.computeIfAbsent(keyParam, (key) -> new ArrayList<>()).add(value);
                 }
             }else{
-                String value = null;
+                String value = "true";
                 keyParamToValues.computeIfAbsent(keyParam, (key) -> new ArrayList<>()).add(value);
             }
 

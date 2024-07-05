@@ -8,7 +8,6 @@ import ru.danila.argparser.exceptions.ParseCommandLineException;
 import ru.danila.argparser.param.KeyCommandParam;
 import ru.danila.argparser.param.PositionCommandParam;
 import ru.danila.argparser.validators.ParsedResultValidator;
-import ru.danila.argparser.validators.ParserArgsValidator;
 
 class SimpleArgParser implements ArgParser{
     private final ParserArgs args;
@@ -17,11 +16,10 @@ class SimpleArgParser implements ArgParser{
     private final CommandsRunnerFactory commandsRunnerFactory;
 
     public SimpleArgParser(ParserArgs args) {
-        new ParserArgsValidator().validateOrThrow(args);
         this.args = args;
         this.paramCollector = new ParamCollector(args.getKeyParams());
-        this.parsedResultValidator = new ParsedResultValidator();
-        this.commandsRunnerFactory = new CommandsRunnerFactory();
+        this.parsedResultValidator = new ParsedResultValidator(args);
+        this.commandsRunnerFactory = new CommandsRunnerFactory(args);
     }
 
     @Override

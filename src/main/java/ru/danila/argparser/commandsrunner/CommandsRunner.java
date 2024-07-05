@@ -2,8 +2,12 @@ package ru.danila.argparser.commandsrunner;
 
 import ru.danila.argparser.exceptions.RunCommandsException;
 
-public interface CommandsRunner {
-    void runAllSync() throws RunCommandsException;
+import java.util.List;
 
-    void runAllAsync() throws RunCommandsException;
+public interface CommandsRunner {
+    static CommandsRunner of(List<Runnable> runnableList){
+        return new SimpleCommandsRunner(runnableList);
+    }
+
+    void runAll() throws RunCommandsException;
 }

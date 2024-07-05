@@ -14,9 +14,9 @@ import java.util.Objects;
  * <p>description must be null</p>
  */
 public class KeyCommandParam extends CommandParam{
-    private String shortName;
-    private String fullName;
-    private boolean isRepeated;
+    private final String shortName;
+    private final String fullName;
+    private final boolean isRepeated;
 
     private KeyCommandParam(Builder builder) {
         super(builder.paramType, builder.isRequired, builder.description);

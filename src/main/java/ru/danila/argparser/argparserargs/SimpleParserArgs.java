@@ -6,7 +6,7 @@ import ru.danila.argparser.exceptions.ArgParserRequiredParamException;
 
 import java.util.*;
 
-class SimpleParserArgs implements ParserArgs{
+public class SimpleParserArgs implements ParserArgs{
     private final Set<KeyCommandParam> keyCommandParamSet;
     private List<PositionCommandParam> positionCommandParamList;
     private Deque<CommandHandler> handlers;
@@ -43,8 +43,8 @@ class SimpleParserArgs implements ParserArgs{
 
     public static class Builder{
         private final Set<KeyCommandParam> keyCommandParamSet = new HashSet<>();
-        private List<PositionCommandParam> positionCommandParamList = new LinkedList<>();
-        private Deque<CommandHandler> handlers = new ArrayDeque<>();
+        private final List<PositionCommandParam> positionCommandParamList = new LinkedList<>();
+        private final Deque<CommandHandler> handlers = new ArrayDeque<>();
 
         public Builder addKeyParam(KeyCommandParam param){
             this.keyCommandParamSet.add(param);
@@ -67,7 +67,7 @@ class SimpleParserArgs implements ParserArgs{
         }
 
         private void validateOrThrow(){
-            if(keyCommandParamSet.isEmpty())
+            if(keyCommandParamSet.isEmpty() && positionCommandParamList.isEmpty())
                 throw new ArgParserRequiredParamException("No command parameters added");
 
             if(handlers.isEmpty())
