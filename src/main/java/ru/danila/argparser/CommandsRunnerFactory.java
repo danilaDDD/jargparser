@@ -3,7 +3,6 @@ package ru.danila.argparser;
 import ru.danila.argparser.argparserargs.ParserArgs;
 import ru.danila.argparser.collector.CollectedResult;
 import ru.danila.argparser.commandsrunner.CommandsRunner;
-import ru.danila.argparser.commandsrunner.SimpleCommandsRunner;
 import ru.danila.argparser.exceptions.ParseCommandLineException;
 import ru.danila.argparser.handler.CommandHandler;
 import ru.danila.argparser.handler.HandleArgs;
@@ -86,7 +85,7 @@ public class CommandsRunnerFactory {
 }
 
 class ValuesToObject<T>{
-    private Function<String, T> parser;
+    private final Function<String, T> parser;
 
     public ValuesToObject(Function<String, T> parser) {
         this.parser = parser;
