@@ -1,7 +1,6 @@
 package ru.danila.argparser.collector;
 
 import ru.danila.argparser.param.KeyCommandParam;
-import ru.danila.argparser.param.PositionCommandParam;
 
 import java.util.List;
 import java.util.Map;

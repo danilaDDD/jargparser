@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 import java.util.function.Supplier;
 
 public class CommandsRunnerFactory {
-    private ParserArgs parserArgs;
+    private final ParserArgs parserArgs;
 
     public CommandsRunnerFactory(ParserArgs parserArgs) {
        this.parserArgs = parserArgs;
@@ -31,7 +31,7 @@ public class CommandsRunnerFactory {
         for(CommandHandler handler: this.parserArgs.getHandlersDeque())
             runners.add(() -> handler.handle(handleArgs));
 
-        return new SimpleCommandsRunner(runners);
+        return CommandsRunner.of(runners);
     }
 
     private HandleArgs parsedValues(CollectedResult collectedResult) throws ParseCommandLineException {

@@ -37,11 +37,6 @@ public class SimpleHandleArgs implements HandleArgs{
     }
 
     @Override
-    public int getPositionValuesSize() {
-        return positionParamValues.size();
-    }
-
-    @Override
     public <R> R getKeyValue(String paramShortName) {
         try {
             KeyCommandParam param = paramShortNameToKeyParam.get(paramShortName);

@@ -8,8 +8,8 @@ import java.util.*;
 
 public class SimpleParserArgs implements ParserArgs{
     private final Set<KeyCommandParam> keyCommandParamSet;
-    private List<PositionCommandParam> positionCommandParamList;
-    private Deque<CommandHandler> handlers;
+    private final List<PositionCommandParam> positionCommandParamList;
+    private final Deque<CommandHandler> handlers;
 
     private SimpleParserArgs(Builder builder){
         positionCommandParamList = builder.positionCommandParamList;
